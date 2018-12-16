@@ -1,3 +1,3 @@
 # AgriTech
-#PlatForm to Help The Farmers#
-*This Web Portal*
+## PlatForm Where Technology Helps The Farmers in an Interactive and User Friendly Way to Grow
+
