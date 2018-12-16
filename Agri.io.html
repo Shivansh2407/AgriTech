@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+body {
+  font-family: "Lato", sans-serif;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+.form-container .cancel {
+  background-color: red;
+}
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AGRITECH.IO</title>
+    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css"/>
+    <link id="switcher" href="assets/css/theme-color/default.css" rel="stylesheet">
+    <link href="preloader.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+  <div id="preloader">
+    <div class="loader">&nbsp;</div>
+  </div>
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+  <header id="header">
+    <div class="header-inner">
+      <img src="C:\Users\Octrix\Desktop\Hacks\Agro-Hack\assets\images\home-bg.jpg" alt="img">
+      <div class="header-overlay">
+        <div class="header-content">
+        <h2 class="header-slide">
+          <span>WELCOME TO AGRITECH.IO</span>
+          <span>WE HELP FARMERS IN EVERY POSSIBLE WAYS</span>
+          <span>WE WISH TO CREATE A CONCEPT IN THE SOCIETY</span>
+          </h2>
+      </div>
+      </div>
+    </div>
+  </header>
+  <section id="menu-area">
+    <nav class="navbar navbar-default main-navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <a class="navbar-brand logo" href="index.html"><img src="C:\Users\Octrix\Desktop\Hacks\Agro-Hack\assets\images\ltst-img-3.jpg" alt="logo"></a>
+</div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav main-nav menu-scroll">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#team">TEAM</a></li>
+            <li><a href="#testimonial">REVIEWS</a></li>
+            <li><a href="#service">SERVICE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+       <div class="search-area">
+          <form action="">
+            <input id="search" name="search" type="text" placeholder="What're you looking for ?">
+            <input id="search_submit" value="Rechercher" type="submit">
+          </form>
+        </div>
+      </div>
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="file:///C:/Users/Octrix/Desktop/Hacks/AgriTech/Agri/mPashu.html">mPashu</a>
+        <a href="file:///C:/Users/Octrix/Desktop/Hacks/AgriTech/Agri/mKisan.html">mKisan</a>
+        <a href="https://forecast7.com/en/12d9279d13/vellore/">Weather Forecast</a>
+        <a href="VideoChat.html">Live Expert Video Chat</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div id="main">
+      <button class="openbtn" onclick="openNav()">☰ Help Menu</button>
+      </div>
+      <script>
+      function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      }
+      function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+    </nav>
+  </section>
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Start welcome area -->
+          <div class="welcome-area">
+            <div class="title-area">
+              <h2 class="tittle">Welcome to <span>AgroHACK</span></h2>
+              <span class="tittle-line"></span>
+              <p>The farmer's best friend, the Agro-Hack by team Hack-tech is now live go ahead and try all the features and please if possible give us feedback, we always love to here from you</p>
+            </div>
+            <div class="welcome-content">
+              <ul class="wc-table">
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-users wc-icon"></span>
+                    <h4 class="wc-tittle">Helping More Farmers</h4>
+                    <p>We At AgroHack would Love to Help more And more Farmers As Possible.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-sellsy wc-icon"></span>
+                    <h4 class="wc-tittle">Responsive Interactions</h4>
+                    <p>We provide you best in class interactions with the professionals as and when required.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-line-chart wc-icon"></span>
+                    <h4 class="wc-tittle">Accurate Predictions</h4>
+                    <p>We at Agro-Hack have designed an algorithm that predicts the best suitable crop to be planted on the basis of ur region and area available.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-bus wc-icon"></span>
+                    <h4 class="wc-tittle">Informative Bots</h4>
+                    <p>The Chatbots associated To this Webpage are quite Informative and can interact in various languages.
+                    <a href="file:///C:/Users/Octrix/Desktop/Hacks/AgriTech/Agri/mPashu.html">mPashu</a>
+                    <a href="file:///C:/Users/Octrix/Desktop/Hacks/AgriTech/Agri/mKisan.html">mKisan</a>
+              </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+<a class="weatherwidget-io" href="https://forecast7.com/en/12d9279d13/vellore/" data-label_1="VELLORE" data-label_2="WEATHER" data-font="Roboto Slab" data-theme="weather_one" >VELLORE WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+  <section id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="team-area">
+            <div class="title-area">
+              <h2 class="tittle">Meet Team Hackers</h2>
+              <span class="tittle-line"></span>
+                        </div>
+            <div class="team-content">
+              <ul class="team-grid">
+                <li>
+                  <div class="team-item team-img-1 wow fadeInUp">
+                    <div class="team-info">
+                      <p> I must explain to you how all this mistaken idea of denouncing pleasure n</p>
+                      <a href="#"><span class="fa fa-facebook"></span></a>
+                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="#"><span class="fa fa-pinterest"></span></a>
+                      <a href="#"><span class="fa fa-rss"></span></a>
+                    </div>
+                  </div>
+                  <div class="team-address">
+                    <p>Shivansh Srivastava</p>
+                    <span>Web Developer </span>
+                  </div>
+                </li>
+                  <li>
+                  <div class="team-item team-img-4 wow fadeInUp">
+                    <div class="team-info">
+                      <p> I must explain to you how all this mistaken idea of denouncing pleasure n</p>
+                      <a href="#"><span class="fa fa-facebook"></span></a>
+                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="#"><span class="fa fa-pinterest"></span></a>
+                      <a href="#"><span class="fa fa-rss"></span></a>
+                    </div>
+                  </div>
+                  <div class="team-address">
+                    <p>Aman Agarwal</p>
+                    <span>Machine Learning Enthusiast</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="service-area">
+            <div class="title-area">
+              <h2 class="tittle">Service we offer</h2>
+              <span class="tittle-line"></span>
+              <p>The following services are a result of hours-and-hours of hardwork put together by our team at <i>Hack tech</i> and all of this is for you.<br><br><i>The services mentoined above requires an internet connection to work.</p>
+            </div>
+            <div class="service-content">
+                  <div class="single-service wow slideInUp">
+                    <span class="fa fa-edit service-icon"></span>
+                    <h4 class="service-title">Crop Predictor</h4>
+                    <p>This ML Based Model Helps the Farmer to Grow the right Crop at the right area in the right season according to the production he requires.</p>
+                  </div>
+
+                  <div class="single-service wow slideInUp">
+                    <span class="fa fa-sort-amount-asc service-icon"></span>
+                    <h4 class="service-title">Informative Chatbots</h4>
+                    <p>The Chatbots associated with this webpage are Quite Informative regarding the Info. on Cattle and Crops</p>
+                  </div>
+
+                 <div class="single-service wow slideInUp">
+                    <span class="fa fa-map-o service-icon"></span>
+                    <h4 class="#menu-area">Weather Widget</h4>
+                    <p>Provides the accurate and current Weather Information.</p>
+                  </div>
+                  <div class="single-service wow slideInUp">
+                    <span class="fa fa-support service-icon"></span>
+                    <h4 class="service-title">Support</h4>
+                    <p>For More Help Contact us at HackTech631@gmail.com</p>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonial">
+    <img src="assets/images/testimonial-bg.jpg" alt="img">
+    <div class="counter-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="testimonial-area">
+              <div class="title-area">
+                <h2 class="tittle">What people say about us</h2>
+                <span class="tittle-line"></span>
+              </div>
+              <div class="testimonial-conten">
+                <div class="testimonial-slider">
+                  <div class="single-slide">
+                    <p>I first saw the website i was completely shocked by it's UI ohh man i completely enjoyed
+                                        it. It might not be upto the mark for some one but according to me it was great.</p>
+                    <div class="single-testimonial">
+                      <img class="testimonial-thumb" src="assets/images/test-img1.jpg" alt="img">
+                      <p>Yuvraj Kumar</p>
+                      <span>IOT and Sensors Techie</span>
+                    </div>
+                  </div>
+                  <div class="single-slide">
+                    <p>My experiance with Hack Tech so far has been amazing, it had a little loose ends here and there but overall it was preety good amazing to us and I wish the team best of luck for the future.</p>
+                    <div class="single-testimonial">
+                      <img class="testimonial-thumb" src="assets/images/test-img2.jpg" alt="img">
+                      <p>Rounak Basak</p>
+                      <span>IOT and Sensors Techie</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="contact-left wow fadeInLeft">
+            <h2>Contact with us</h2>
+            <address class="single-address">
+              <h4>Postal address:</h4>
+              <p>VIT VELLORE,TamilNadu</p>
+            </address>
+             <address class="single-address">
+              <h4>Headquarters:</h4>
+              <p>VIT VELLORE,TamilNadu</p>
+            </address>
+             <address class="single-address">
+              <h4>Phone</h4>
+              <p>Phone Number: (123) 456 7890</p>
+              <p>Fax Number: (123) 456 7890</p>
+            </address>
+             <address class="single-address">
+              <h4>E-Mail</h4>
+              <p>Support:hacktech631@gmail.com </p>
+            </address>
+          </div>
+        </div>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc5tUfd6zm8ZeIQR_s8o22BOPr1rzBzt3JE0Whm52FmMxKuFw/viewform?embedded=true" width="640" height="878" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+    </div>
+  </section>
+  <section id="google-map">
+  <iframe src="https://maps.google.com/maps?q=vit%20vellore&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </section>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-top-area">
+                <a class="footer-logo" href="#"><img src="C:\Users\Octrix\Desktop\Hacks\Agro-Hack\assets\images\ltst-img-3.jpg" alt="Logo"></a>
+              <div class="footer-social">
+                <a class="facebook" href="#"><span class="fa fa-facebook"></span></a>
+                <a class="twitter" href="#"><span class="fa fa-twitter"></span></a>
+                <a class="google-plus" href="#"><span class="fa fa-google-plus"></span></a>
+                <a class="youtube" href="#"><span class="fa fa-youtube"></span></a>
+                <a class="linkedin" href="#"><span class="fa fa-linkedin"></span></a>
+                <a class="dribbble" href="#"><span class="fa fa-dribbble"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Designed by <a rel="nofollow" href="http://www.agritech.io/">AgriTech.io</a></p>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="assets/js/slick.js"></script>
+  <script type="text/javascript" src="assets/js/waypoints.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.counterup.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="assets/js/wow.js"></script>
+  <script type="text/javascript" src="assets/js/custom.js"></script>
+  </body>
+</html>
